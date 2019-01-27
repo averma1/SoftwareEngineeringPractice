@@ -6,17 +6,21 @@ public class BankAccount {
     private double balance;
 
     /**
-     * @throws IllegalArgumentException if email is invalid
+     * @throws IllegalArgumentException if either email or startingBalance are invalid
      */
+
     public BankAccount(String email, double startingBalance){
-        if (isEmailValid(email)){
+
+        if (isEmailValid(email) && isAmountValid(startingBalance)){
             this.email = email;
             this.balance = startingBalance;
         }
         else {
-            throw new IllegalArgumentException("Email address: " + email + " is invalid, cannot create account");
+            throw new IllegalArgumentException("sorry, you have entered an invalid value. we cannot create an account.");
         }
+
     }
+
 
     public double getBalance(){
         return balance;
@@ -35,11 +39,12 @@ public class BankAccount {
 
     public void withdraw (double amount)  {
 
-        if(balance >= amount && amount > 0){
+        if(balance >= amount && isAmountValid(amount)){
             balance -= amount;
         }
 
     }
+
 
     /**
      * @param amount - the amount must be positive and have two decimal points or less
