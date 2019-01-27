@@ -39,13 +39,17 @@ public class BankAccount {
      * an email is valid if:
      * there is is an @ symbol present, and this @ symbol is not the last character
      * there must be a . after the @ symbol, and this . should not be the last character
+     * @param email - the email address to check
+     * @return True - if the email is valid
     */
 
+
+
     public static boolean isEmailValid(String email){
-        if (email.indexOf('@') == -1){
+        if (email.indexOf('@') == -1) {
             return false;
         }
-        else {
+        else{
             return true;
         }
     }
