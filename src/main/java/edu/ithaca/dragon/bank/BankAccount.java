@@ -48,6 +48,16 @@ public class BankAccount {
 
     public static boolean isAmountValid(double amount){
 
+        if(amount >= 0) {
+            String amountString = Double.toString(amount);
+            int decimalPlaces = amountString.length() - amountString.indexOf('.') - 1;
+
+            if (decimalPlaces < 3) {
+                return true;
+            }
+
+        }
+
         return false;
 
     }
