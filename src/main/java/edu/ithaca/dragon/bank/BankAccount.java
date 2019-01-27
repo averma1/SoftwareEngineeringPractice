@@ -33,7 +33,10 @@ public class BankAccount {
      */
 
     public void withdraw (double amount)  {
-        balance -= amount;
+
+        if(balance >= amount && amount > 0){
+            balance -= amount;
+        }
 
     }
 
