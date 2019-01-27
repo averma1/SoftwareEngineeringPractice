@@ -48,6 +48,21 @@ class BankAccountTest {
 
     }
 
+
+    @Test
+    void isAmountValidTest(){
+
+        assertTrue(BankAccount.isAmountValid(10));
+        assertTrue(BankAccount.isAmountValid(1.20));
+        assertTrue(BankAccount.isAmountValid(50.2));
+
+        assertFalse(BankAccount.isAmountValid(-300));
+        assertFalse(BankAccount.isAmountValid(9.0123));
+        assertFalse(BankAccount.isAmountValid(67.126));
+
+    }
+
+
     @Test
     void constructorTest() {
         BankAccount bankAccount = new BankAccount("a@b.com", 200);

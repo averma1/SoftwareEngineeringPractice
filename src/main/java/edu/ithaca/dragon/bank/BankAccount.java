@@ -30,6 +30,7 @@ public class BankAccount {
     /**
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
      * if the amount to be withdrawn is greater than the balance or negative, nothing should happen
+     * @param amount - the amount to be withdrawn
      */
 
     public void withdraw (double amount)  {
@@ -39,6 +40,18 @@ public class BankAccount {
         }
 
     }
+
+    /**
+     * @param amount - the amount must be positive and have two decimal points or less
+     * @return True - if the above is true
+     */
+
+    public static boolean isAmountValid(double amount){
+
+        return false;
+
+    }
+
 
 
     /**
